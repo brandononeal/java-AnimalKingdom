@@ -61,11 +61,14 @@ public class Main {
     animalList.sort((a1, a2) -> (a1.getName().compareToIgnoreCase(a2.getName())));
     printFilteredList(animalList, a -> a.getYearDiscovered() == 1758);
     System.out.println();
+
+    System.out.print("*** For the list of animals, list alphabetically those animals that are mammals ***\n");
+    printFilteredList(animalList, a -> a instanceof Mammal);
   }
   public static void printFilteredList(List <Animal> animalList, AnimalTester animalTester) {
     for (Animal a : animalList) {
       if (animalTester.test(a)) {
-        System.out.print(a.getName() + " " + a.getReproduction() + " " + a.getBreath() + " " + a.getYearDiscovered()+ "\n");
+        System.out.print(a.getName() + " " + a.getReproduction() + " " + a.getMovement() + " " + a.getBreath() + " " + a.getYearDiscovered()+ "\n");
       }
     }
   }
